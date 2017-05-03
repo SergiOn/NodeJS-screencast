@@ -1,0 +1,9 @@
+{
+  "name": "NodeJS-screencast",
+  "version": "1.0.0",
+  "description": "nodejs screencast with native server, express, mongo, mongoose",
+  "main": "index.js",
+  "repository": "git@github.com:SergiOn/NodeJS-screencast.git",
+  "author": "SergiOn <Onishhenko@gmail.com>",
+  "license": "MIT"
+}
