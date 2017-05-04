@@ -2,4 +2,25 @@
 
 <a target="_blank" href="https://www.youtube.com/playlist?list=PLDyvV36pndZFWfEQpNixIHVvp191Hb3Gg">Link to screencast</a>
 
-<h3>#0 Introduction</h3>
+<h3>#1 Intro-1 About</h3>
+<h3>#2 Intro-2 Whatisnode</h3>
+
+### What is node?
+
+* Created by Ryan Dahl at 2009
+* Node.JS = V8 +I/O + libraries
+* V8: fast, modern, economically
+* Alternatives: Rhino, JSC, WSH...
+
+### Why is node?
+
+1. Want JavaScript
+2. Common code in client and server side
+3. Solves the main tasks
+4. Many connections and tasks at the same time
+5. Easy to create the working prototype
+6. Comfortable packet manager with many packages
+7. The large and active community around
+
+<h3>#3 Intro-3 Install</h3>
+<h3>#4 Intro-4 Docs</h3>
