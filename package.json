@@ -5,5 +5,8 @@
   "main": "index.js",
   "repository": "git@github.com:SergiOn/NodeJS-screencast.git",
   "author": "SergiOn <Onishhenko@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start:server": "node start/server.js"
+  }
 }
