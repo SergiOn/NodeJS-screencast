@@ -1,5 +1,5 @@
-// const User = require('./user').User;
-require('./user');
+const User = require('./user').User;
+// require('./user');
 
 let vasya = new User('Vasya');
 let petya = new User('Petya');
