@@ -1,11 +1,12 @@
-const phrases = require('./ru');
+const db = require('./../db');
+db.connect();
 
 function User(name) {
     this.name = name;
 }
 
 User.prototype.hello = function (who) {
-    console.log(phrases.Hello, who.name);
+    console.log(db.getPhrases('Hello'), who.name);
 };
 
 // global.User = User;
