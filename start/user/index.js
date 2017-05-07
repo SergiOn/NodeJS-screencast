@@ -9,4 +9,4 @@ User.prototype.hello = function (who) {
 };
 
 // global.User = User;
-exports.User = User;
+module.exports = User;

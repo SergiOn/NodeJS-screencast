@@ -1,4 +1,4 @@
-const User = require('./user').User;
+const User = require('./user');
 // require('./user');
 
 function run() {
@@ -10,7 +10,7 @@ function run() {
     console.log(typeof petya);
 }
 
-console.log(module);
+// console.log(module);
 
 if (module.parent) {
     module.exports.run = run;
