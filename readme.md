@@ -24,9 +24,7 @@
 7. The large and active community around
 
 <h3>#3 Intro-3 Install</h3>
-
 <h3>#4 Intro-4 Docs</h3>
-
 <h3>#5 Modules-1 Intro</h3>
-
 <h3>#6 Modules-2 Module</h3>
+<h3>#7 npm-1 Intro</h3>
