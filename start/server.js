@@ -1,4 +1,5 @@
-const db = require('db');
+const log = require('./logger')(module);
+const db = require('./db');
 const User = require('./user');
 // require('./user');
 
@@ -10,7 +11,7 @@ function run() {
     console.log(petya);
     console.log(typeof petya);
 
-    console.log(db.getPhrases('Run successful'));
+    log(db.getPhrases('Run successful'));
 }
 
 // console.log(module);

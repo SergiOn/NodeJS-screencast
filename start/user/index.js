@@ -1,4 +1,5 @@
-const db = require('db');
+const log = require('./../logger')(module);
+const db = require('./../db');
 db.connect();
 
 function User(name) {
@@ -6,7 +7,7 @@ function User(name) {
 }
 
 User.prototype.hello = function (who) {
-    console.log(db.getPhrases('Hello'), who.name);
+    log(db.getPhrases('Hello'), who.name);
 };
 
 // global.User = User;
