@@ -3,6 +3,7 @@
 <a target="_blank" href="https://www.youtube.com/playlist?list=PLDyvV36pndZFWfEQpNixIHVvp191Hb3Gg">Link to screencast</a>
 
 <h3>#1 Intro-1 About</h3>
+
 <h3>#2 Intro-2 Whatisnode</h3>
 
 ### What is node?
@@ -27,3 +28,5 @@
 <h3>#4 Intro-4 Docs</h3>
 
 <h3>#5 Modules-1 Intro</h3>
+
+<h3>#6 Modules-2 Module</h3>
