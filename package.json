@@ -9,5 +9,8 @@
   "scripts": {
     "start:server": "node start/server.js",
     "start:app": "node start/app.js"
+  },
+  "dependencies": {
+    "express": "^4.15.2"
   }
 }
