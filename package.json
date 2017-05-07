@@ -13,7 +13,8 @@
     "top:format": "node top/format.js",
     "top:inherits": "node top/inherits.js",
     "top:console": "node top/console.js",
-    "top:console:files": "node top/console.js 1>top/ok 2>top/err"
+    "top:console:files": "node top/console.js 1>top/ok 2>top/err",
+    "top:error": "node top/error.js"
   },
   "dependencies": {}
 }

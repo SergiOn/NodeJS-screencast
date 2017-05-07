@@ -39,3 +39,4 @@
 * inherits
 
 <h3>#11 top-2 Console</h3>
+<h3>#12 top-3 Inherit error</h3>
