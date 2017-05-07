@@ -8,7 +8,8 @@
   "license": "MIT",
   "scripts": {
     "start:server": "node start/server.js",
-    "start:app": "node start/app.js"
+    "start:app": "node start/app.js",
+    "top:inspect": "node top/inspect.js"
   },
   "dependencies": {}
 }
