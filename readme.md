@@ -31,3 +31,8 @@
 <h3>#8 npm-2 Package</h3>
 <h3>#9 npm-3 Global</h3>
 <h3>#10 top-1 Util</h3>
+
+### util
+
+* inspect
+* format
