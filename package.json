@@ -10,7 +10,8 @@
     "start:server": "node start/server.js",
     "start:app": "node start/app.js",
     "top:inspect": "node top/inspect.js",
-    "top:format": "node top/format.js"
+    "top:format": "node top/format.js",
+    "top:inherits": "node top/inherits.js"
   },
   "dependencies": {}
 }

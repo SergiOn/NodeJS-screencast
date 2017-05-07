@@ -36,3 +36,4 @@
 
 * inspect
 * format
+* inherits
