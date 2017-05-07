@@ -8,7 +8,7 @@ const phrases = {
 
 function PhraseError(message) {
     this.message = message;
-    Error.captureStackTrace(this);
+    Error.captureStackTrace(this, PhraseError);
 }
 util.inherits(PhraseError, Error);
 PhraseError.prototype.name = 'PhraseError';
@@ -16,7 +16,7 @@ PhraseError.prototype.name = 'PhraseError';
 function HttpError(status, message) {
     this.status = status;
     this.message = message;
-    Error.captureStackTrace(this);
+    Error.captureStackTrace(this, HttpError);
 }
 util.inherits(HttpError, Error);
 HttpError.prototype.name = 'HttpError';
