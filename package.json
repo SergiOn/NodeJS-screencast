@@ -16,7 +16,8 @@
     "top:console:files": "node top/console.js 1>top/ok 2>top/err",
     "top:error": "node top/error.js",
     "top:ee": "node top/ee.js",
-    "top:ee2": "node top/ee2.js"
+    "top:ee2": "node top/ee2.js",
+    "top:leak": "node top/leak.js"
   },
   "dependencies": {}
 }
