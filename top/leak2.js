@@ -17,4 +17,5 @@ function Request() {
 setInterval(() => {
     const request = new Request();
     console.log(process.memoryUsage().heapUsed);
+    console.log(db);
 }, 200);
