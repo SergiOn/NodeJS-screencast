@@ -17,7 +17,8 @@
     "top:error": "node top/error.js",
     "top:ee": "node top/ee.js",
     "top:ee2": "node top/ee2.js",
-    "top:leak": "node top/leak.js"
+    "top:leak": "node top/leak.js",
+    "top:leak2": "node top/leak2.js"
   },
   "dependencies": {}
 }
