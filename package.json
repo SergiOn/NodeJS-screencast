@@ -19,7 +19,8 @@
     "top:ee2": "node top/ee2.js",
     "top:leak": "node top/leak.js",
     "top:leak2": "node top/leak2.js",
-    "top:leak3": "node top/leak3.js"
+    "top:leak3": "node top/leak3.js",
+    "server:server": "node server/server.js"
   },
   "dependencies": {}
 }
