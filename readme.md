@@ -25,11 +25,38 @@
 
 <h3>#3 Intro-3 Install</h3>
 <h3>#4 Intro-4 Docs</h3>
+
+### Installation and launching
+
+* http://nodejs.org
+* Execution of scripts
+* Documentation
+
 <h3>#5 Modules-1 Intro</h3>
 <h3>#6 Modules-2 Module</h3>
+
+### Methods of working with modules
+
+* Object module
+* Module or application? module.parent
+* Module-function module.exports = function
+* Caching module
+* Module location: search order
+* Send parameters: module-factory
+
 <h3>#7 npm-1 Intro</h3>
 <h3>#8 npm-2 Package</h3>
+
+### npm packet
+
+* Version: Major.Minor.Patch semver.org
+* Dependencies: dependencies, devDependencies
+* Entry point: main
+* Further: bin, scripts
+* About package.json: npm help json
+
 <h3>#9 npm-3 Global</h3>
+
 <h3>#10 top-1 Util</h3>
 
 ### util
@@ -44,4 +71,8 @@
 
 ### require('events').EventEmitter
 
-* 
+* emit(event, args...) -> on(event, args...)
+* Saves the order of the handlers
+* Can check the order of the handlers
+* emmit(error) without handlers -> throw
+* Fights memory leaks
