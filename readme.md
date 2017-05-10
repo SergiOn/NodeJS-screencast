@@ -79,3 +79,7 @@
 
 <h3>#14 Server-1 Intro</h3>
 
+### Node.JS like web-server
+
+* http.Server -> net.Server -> events.EventEmitter
+* Events: listening, connection, request
