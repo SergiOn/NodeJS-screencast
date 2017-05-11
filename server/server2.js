@@ -13,6 +13,7 @@ const server = new http.Server((req, res) => {
     console.log(urlParse);
 
     if (urlParse.pathname === '/echo' && urlParse.query.message === 'hello') {
+        res.setHeader('Cache-control', 'no-cache');
         res.statusCode = 200; // OK
         res.end( urlParse.query.message );
     } else {
