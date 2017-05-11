@@ -20,7 +20,8 @@
     "top:leak": "node top/leak.js",
     "top:leak2": "node top/leak2.js",
     "top:leak3": "node top/leak3.js",
-    "server:server": "node server/server.js"
+    "server:server": "node server/server.js",
+    "server:server2": "node server/server2.js"
   },
   "dependencies": {}
 }
