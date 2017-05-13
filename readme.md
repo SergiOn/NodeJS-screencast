@@ -112,5 +112,6 @@ node-inspector
 <h3>#21 Event-loop-2 Inside</h3>
 <h3>#22 Event-loop-3 Timers</h3>
 <h3>#23 fs-1 fs</h3>
+<h3>#24 fs-2 path</h3>
 
 
