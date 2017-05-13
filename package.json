@@ -27,7 +27,8 @@
     "dev:server:debug": "node --inspect dev/server.js",
     "event-loop:serverSync": "node event-loop/serverSync.js",
     "event-loop:serverAsync": "node event-loop/serverAsync.js",
-    "event-loop:ref": "node event-loop/ref.js"
+    "event-loop:ref": "node event-loop/ref.js",
+    "event-loop:server": "node event-loop/server.js"
   },
   "dependencies": {}
 }
