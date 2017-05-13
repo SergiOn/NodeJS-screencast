@@ -88,3 +88,14 @@
 <h3>#16 Server-3 Docs</h3>
 <h3>#17 Dev-1 Supervisor</h3>
 
+### Development and debug
+
+* supervisor
+* debugger node debug
+* debugger in browser Chrome
+* debugger in IDE
+
+<pre>
+node-inspector
+</pre>
+

@@ -8,6 +8,8 @@ const server = new http.Server();
 server.on('request', (req, res) => {
     const urlParse = url.parse(req.url, true);
 
+    debugger;
+
     if (req.method === 'GET' && urlParse.pathname === '/echo' && urlParse.query.message) {
         res.end(urlParse.query.message);
         return;
@@ -18,3 +20,4 @@ server.on('request', (req, res) => {
 });
 
 server.listen(1337);
+console.log('Server is running');

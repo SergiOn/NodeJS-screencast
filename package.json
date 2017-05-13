@@ -23,7 +23,8 @@
     "server:server": "node server/server.js",
     "server:server2": "node server/server2.js",
     "dev:server": "node dev/server.js",
-    "dev:server:supervisor": "supervisor dev/server.js"
+    "dev:server:supervisor": "supervisor dev/server.js",
+    "dev:server:debug": "node --inspect dev/server.js"
   },
   "dependencies": {}
 }
