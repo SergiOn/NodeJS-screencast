@@ -24,7 +24,9 @@
     "server:server2": "node server/server2.js",
     "dev:server": "node dev/server.js",
     "dev:server:supervisor": "supervisor dev/server.js",
-    "dev:server:debug": "node --inspect dev/server.js"
+    "dev:server:debug": "node --inspect dev/server.js",
+    "event-loop:serverSync": "node event-loop/serverSync.js",
+    "event-loop:serverAsync": "node event-loop/serverAsync.js"
   },
   "dependencies": {}
 }
