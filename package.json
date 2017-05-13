@@ -29,7 +29,8 @@
     "event-loop:serverAsync": "node event-loop/serverAsync.js",
     "event-loop:ref": "node event-loop/ref.js",
     "event-loop:server": "node event-loop/server.js",
-    "fs:read": "node fs/read.js"
+    "fs:read": "node fs/read.js",
+    "fs:read2": "node fs/read2.js"
   },
   "dependencies": {}
 }
