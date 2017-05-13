@@ -31,7 +31,8 @@
     "event-loop:server": "node event-loop/server.js",
     "fs:read": "node fs/read.js",
     "fs:read2": "node fs/read2.js",
-    "fs:server": "node fs/server.js"
+    "fs:server": "node fs/server.js",
+    "streams:fs": "node streams/fs.js"
   },
   "dependencies": {}
 }
