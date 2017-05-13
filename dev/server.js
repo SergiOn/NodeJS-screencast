@@ -8,8 +8,6 @@ const server = new http.Server();
 server.on('request', (req, res) => {
     const urlParse = url.parse(req.url, true);
 
-    debugger;
-
     if (req.method === 'GET' && urlParse.pathname === '/echo' && urlParse.query.message) {
         res.end(urlParse.query.message);
         return;

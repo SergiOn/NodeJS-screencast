@@ -87,6 +87,7 @@
 <h3>#15 Server-2 Echo</h3>
 <h3>#16 Server-3 Docs</h3>
 <h3>#17 Dev-1 Supervisor</h3>
+<h3>#18 Dev-2 Debug</h3>
 
 ### Development and debug
 
@@ -99,3 +100,10 @@
 node-inspector
 </pre>
 
+<h3>#19 Dev-3 Log</h3>
+
+### Logging
+
+* module debug
+* module winston
+* NODE_DEBUG="cluster fs http module net times tls"
