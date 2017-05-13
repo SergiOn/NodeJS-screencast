@@ -6,7 +6,9 @@ const server = http.createServer((req, res) => {
 
 
 setTimeout(() => {
-    server.close();
+    server.close(() => {
+        process.exit();
+    });
 }, 2500);
 
 setInterval(() => {
