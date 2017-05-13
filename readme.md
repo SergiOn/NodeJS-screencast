@@ -113,5 +113,15 @@ node-inspector
 <h3>#22 Event-loop-3 Timers</h3>
 <h3>#23 fs-1 fs</h3>
 <h3>#24 fs-2 path</h3>
+<h3>#25 Streams-1 Readable</h3>
 
+### Streams in NodeJS
+
+* stream.Readable - reading
+* ...from file: fs.ReadStream
+* ...request user: server.on('request, ...req...)
+* stream.Writable - reading
+* ...to file: fs.WriteStream
+* ...answer to user: server.on('request, ...res...)
+* have another type of protocols
 
