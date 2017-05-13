@@ -7,10 +7,10 @@ const server = http.createServer((req, res) => {
 
 setTimeout(() => {
     server.close(() => {
-        process.exit();
+        clearInterval(timer);
     });
 }, 2500);
 
-setInterval(() => {
+let timer = setInterval(() => {
     console.log(process.memoryUsage());
 }, 1000);
