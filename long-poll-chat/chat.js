@@ -21,7 +21,7 @@ exports.publish = function(message) {
     clients = [];
 };
 
-setInterval(function() {
-    console.log(clients.length);
-}, 2000);
+// setInterval(function() {
+//     console.log(clients.length);
+// }, 2000);
 
