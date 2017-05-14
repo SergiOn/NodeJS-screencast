@@ -15,11 +15,15 @@ http.createServer((req, res) => {
         case '/publish':
             let body = '';
 
+
             req
                 .on('readable', () => {
-                    body += req.read();
+                    let read = req.read(); // problem
+                    console.log(read);
 
-                    console.log(body);
+                    if (read) {
+                        body += read;
+                    }
 
                     if (body.length > 1e4) {
                         res.statusCode = 413;
