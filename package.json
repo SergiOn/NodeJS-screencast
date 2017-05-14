@@ -33,7 +33,8 @@
     "fs:read2": "node fs/read2.js",
     "fs:server": "node fs/server.js",
     "streams:fs": "node streams/fs.js",
-    "streams:pipe": "node streams/pipe.js"
+    "streams:pipe": "node streams/pipe.js",
+    "streams:pipe2": "node streams/pipe2.js"
   },
   "dependencies": {}
 }
