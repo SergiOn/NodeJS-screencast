@@ -1,10 +1,13 @@
 const fs = require('fs');
 
-const stream = new fs.ReadStream(__filename);
+const stream = new fs.ReadStream('streams/big.html');
 
 stream.on('readable', () => {
     let data = stream.read();
-    console.log(data);
+    if (data) {
+        console.log(data);
+        console.log(data.length);
+    }
 });
 
 stream.on('end', () => {
