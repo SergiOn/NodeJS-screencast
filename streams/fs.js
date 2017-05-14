@@ -14,3 +14,7 @@ stream.on('end', () => {
     console.log('THE END');
 });
 
+stream.on('error', (err) => {
+    console.error(err);
+});
+
