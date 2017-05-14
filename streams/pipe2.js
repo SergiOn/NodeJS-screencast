@@ -12,6 +12,26 @@ new http.Server((req, res) => {
 
 function sendFile(file, res) {
     file.pipe(res);
-    file.pipe(process.stdout);
+
+    file.on('error', (err) => {
+        res.statusCode = 500;
+        res.end('Server error');
+        console.error(err);
+    });
+
+    file
+        .on('open', () => {
+            console.log('open');
+        }).on('close', () => {
+            console.log('close');
+        });
+
+    res.on('close', () => {
+        file.destroy();
+    });
+
+    res.on('finish', () => {
+        console.log('finish');
+    });
 }
 
