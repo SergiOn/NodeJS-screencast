@@ -13,7 +13,32 @@ http.createServer((req, res) => {
             break;
 
         case '/publish':
-            chat.publish();
+            let body = '';
+
+            req
+                .on('readable', () => {
+                    body += req.read();
+
+                    console.log(body);
+
+                    if (body.length > 1e4) {
+                        res.statusCode = 413;
+                        res.end("Your message is too big for my little chat");
+                    }
+                })
+                .on('end', () => {
+                    try {
+                        body = JSON.parse(body);
+                    } catch (e) {
+                        console.error(e);
+                        res.statusCode = 400;
+                        res.end("Bad Request");
+                        return;
+                    }
+
+                    chat.publish(body.message);
+                    res.end("ok");
+                });
             break;
 
         default:
