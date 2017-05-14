@@ -12,5 +12,6 @@ new http.Server((req, res) => {
 
 function sendFile(file, res) {
     file.pipe(res);
+    file.pipe(process.stdout);
 }
 
