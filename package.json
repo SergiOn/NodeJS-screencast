@@ -36,7 +36,7 @@
     "streams:pipe": "node streams/pipe.js",
     "streams:pipe2": "node streams/pipe2.js",
     "long-poll-chat:server": "node long-poll-chat/server.js",
-    "domain:server": "node domain/server.js"
+    "domain:app": "node domain/app.js"
   },
   "dependencies": {}
 }

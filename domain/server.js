@@ -4,13 +4,8 @@ const fs = require('fs');
 function handler(req, res) {
     if (req.url === '/') {
 
-        fs.readFile('domain/index.html', (err, content) => {
-            if (err) {
-                console.error(err);
-                res.statusCode = 500;
-                res.end('server error');
-                return;
-            }
+        fs.readFile('domain/index5.html', (err, content) => {
+            if (err) throw err;
 
             console.log('domain');
             res.end(content);
@@ -22,4 +17,5 @@ function handler(req, res) {
 }
 
 const server = new http.createServer(handler);
-server.listen(3000);
+
+module.exports = server;
