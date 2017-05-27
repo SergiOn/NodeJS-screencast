@@ -19,6 +19,14 @@ app.use((req, res, next) => {
 });
 
 app.use((req, res, next) => {
+    if (req.url === '/forbidden') {
+        next(new Error("wops, denied"));
+    } else {
+        next();
+    }
+});
+
+app.use((req, res, next) => {
     if (req.url === '/test') {
         res.end('test');
     } else {
@@ -27,9 +35,18 @@ app.use((req, res, next) => {
 });
 
 app.use((req, res) => {
-    res.send(404, 'Page Not Found Sorry');
+    res.status(404).send('Page Not Found Sorry');
 });
 
+app.use((err, req, res, next) => {
+    // NODE_ENV = 'production'
+    if (app.get('env') === 'development') {
+        let errorHandler = express.errorHandler();
+        errorHandler(err, req, res, next);
+    } else {
+        res.send(500);
+    }
+});
 
 /*
 var express = require('express');
