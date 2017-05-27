@@ -10,8 +10,24 @@ http.createServer(app).listen(app.get('port'), () => {
     console.log('Express server listening on port ' + app.get('port'));
 });
 
+app.use((req, res, next) => {
+    if (req.url === '/') {
+        res.end('hello');
+    } else {
+        next();
+    }
+});
+
+app.use((req, res, next) => {
+    if (req.url === '/test') {
+        res.end('test');
+    } else {
+        next();
+    }
+});
+
 app.use((req, res) => {
-    res.end('hello');
+    res.send(404, 'Page Not Found Sorry');
 });
 
 
