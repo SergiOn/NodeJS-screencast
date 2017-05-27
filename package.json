@@ -37,7 +37,9 @@
     "streams:pipe2": "node streams/pipe2.js",
     "long-poll-chat:server": "node long-poll-chat/server.js",
     "domain:app": "node domain/app.js",
-    "process:server": "node process/server.js"
+    "process:server": "node process/server.js --port=3000"
   },
-  "dependencies": {}
+  "dependencies": {
+    "optimist": "^0.6.1"
+  }
 }
