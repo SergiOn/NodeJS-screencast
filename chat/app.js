@@ -1,4 +1,23 @@
+const express = require('express');
+const http = require('http');
+const path = require('path');
+
+const app = express();
+
+app.set('port', 3000);
+
+http.createServer(app).listen(app.get('port'), () => {
+    console.log('Express server listening on port ' + app.get('port'));
+});
+
+app.use((req, res) => {
+    res.end('hello');
+});
+
+
+/*
 var express = require('express');
+
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -44,3 +63,5 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+*/
