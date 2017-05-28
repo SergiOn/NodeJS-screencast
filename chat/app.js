@@ -3,13 +3,14 @@ const http = require('http');
 const path = require('path');
 const config = require('./config');
 const port = config.get('port');
+const log = require('./libs/log')(module);
 
 const app = express();
 
 app.set('port', port);
 
 http.createServer(app).listen(port, () => {
-    console.log('Express server listening on port ' + port);
+    log.info('Express server listening on port ' + port);
 });
 
 app.use((req, res, next) => {
