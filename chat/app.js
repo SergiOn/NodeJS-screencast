@@ -7,6 +7,7 @@ const engine = require('ejs-mate');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+const errorHandler = require('errorhandler');
 const config = require('./config');
 const port = config.get('port');
 const log = require('./libs/log')(module);
@@ -37,7 +38,7 @@ app.use(cookieParser());
 
 app.get('/', (req, res, next) => {
     res.render('index', {
-        title: '<b>Hello</b>'
+
     });
 });
 
@@ -46,7 +47,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use((err, req, res, next) => {
     // NODE_ENV = 'production'
     if (app.get('env') === 'development') {
-        let errorHandler = express.errorHandler();
         errorHandler(err, req, res, next);
     } else {
         res.send(500);
