@@ -1,6 +1,8 @@
 <h1>NodeJS screencast</h1>
 
-<a target="_blank" href="https://www.youtube.com/playlist?list=PLDyvV36pndZFWfEQpNixIHVvp191Hb3Gg">Link to screencast</a>
+<a target="_blank" href="https://www.youtube.com/playlist?list=PLDyvV36pndZFWfEQpNixIHVvp191Hb3Gg">
+    Link to screencast
+</a>
 
 <h3>#1 Intro-1 About</h3>
 
@@ -130,6 +132,12 @@ node-inspector
 <h3>#28 Domain</h3>
 <h3>#29 Process params</h3>
 <h3>#30 Chat-1</h3>
+<pre>
+https://github.com/iliakan/nodejs-screencast/tree/master/chat
+</pre>
+<a target="_blank" href="https://github.com/iliakan/nodejs-screencast/tree/master/chat">
+    Link to chat screencast
+</a>
 <h3>#31 Chat-2</h3>
 <h3>#32 Chat-3</h3>
 <h3>#33 Mongo Install</h3>
