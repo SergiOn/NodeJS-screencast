@@ -1,13 +1,15 @@
 const express = require('express');
 const http = require('http');
 const path = require('path');
+const config = require('./config');
+const port = config.get('port');
 
 const app = express();
 
-app.set('port', 3000);
+app.set('port', port);
 
-http.createServer(app).listen(app.get('port'), () => {
-    console.log('Express server listening on port ' + app.get('port'));
+http.createServer(app).listen(port, () => {
+    console.log('Express server listening on port ' + port);
 });
 
 app.use((req, res, next) => {
