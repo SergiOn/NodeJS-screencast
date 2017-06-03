@@ -18,6 +18,7 @@
     "errorhandler": "^1.5.0",
     "express": "^4.15.3",
     "express-session": "^1.15.3",
+    "mongodb": "^2.2.28",
     "morgan": "^1.8.1",
     "nconf": "^0.8.4",
     "serve-favicon": "^2.4.2",
