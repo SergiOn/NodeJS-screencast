@@ -1,22 +1,14 @@
-const MongoClient = require('mongodb').MongoClient,
-    format = require('util').format;
+const User = require('models/user').User;
 
+const user = new User({
+    username: "Tester2",
+    password: "secret"
+});
 
-MongoClient.connect('mongodb://127.0.0.1:27017/chat', function(err, db) {
+user.save(function(err, user, affected) {
     if (err) throw err;
-    const collection = db.collection("test_insert");
 
-    collection.deleteMany({}, (err, results) => {
-        if (err) throw err;
-
-        collection.insertOne({a: 2}, (err, res) => {
-
-            const cursor = collection.find( {a: 2} );
-            cursor.toArray(function(err, results) {
-                console.dir(results);
-                // Let's close the db
-                db.close();
-            });
-        });
+    User.findOne({username: "Tester"}, function(err, tester) {
+        console.log(tester);
     });
 });
