@@ -1,4 +1,5 @@
 const express = require('express');
+const router = express.Router();
 const http = require('http');
 const path = require('path');
 const favicon = require('serve-favicon');
@@ -11,6 +12,7 @@ const errorHandler = require('errorhandler');
 const config = require('./config');
 const port = config.get('port');
 const log = require('./lib/log')(module);
+const HttpError = require('./error').HttpError;
 
 const app = express();
 
@@ -36,25 +38,28 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 // app.use(session());
 
-app.get('/', (req, res, next) => {
-    res.render('index');
-});
+app.use(require('./middleware/sendHttpError'));
 
-const User = require('./models/user').User;
-app.get('/users', function (req, res, next) {
-    User.find({}, function (err, users) {
-        if (err) throw err;
-        res.json(users);
-    });
-});
+app.use(router);
+
+require('routes')(app);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use((err, req, res, next) => {
-    // NODE_ENV = 'production'
-    if (app.get('env') === 'development') {
-        errorHandler(err, req, res, next);
+app.use(function(err, req, res, next) {
+    if (typeof err === 'number') { // next(404);
+        err = new HttpError(err);
+    }
+
+    if (err instanceof HttpError) {
+        res.sendHttpError(err);
     } else {
-        res.send(500);
+        if (app.get('env') === 'development') {
+            errorHandler()(err, req, res, next);
+        } else {
+            log.error(err);
+            err = new HttpError(500);
+            res.sendHttpError(err);
+        }
     }
 });
