@@ -10,7 +10,7 @@ const session = require('express-session');
 const errorHandler = require('errorhandler');
 const config = require('./config');
 const port = config.get('port');
-const log = require('./libs/log')(module);
+const log = require('./lib/log')(module);
 
 const app = express();
 
