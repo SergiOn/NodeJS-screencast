@@ -1,5 +1,5 @@
-const User = require('models/user').User;
-const HttpError = require('error').HttpError;
+const User = require('../models/user').User;
+const HttpError = require('../error').HttpError;
 const ObjectID = require('mongodb').ObjectID;
 
 module.exports = function(app) {
@@ -23,6 +23,8 @@ module.exports = function(app) {
             next(404);
             return;
         }
+
+        console.log(id);
 
         User.findById(id, function(err, user) { // ObjectID
             if (err) return next(err);
