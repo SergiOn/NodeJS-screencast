@@ -1,38 +1,14 @@
-const User = require('../models/user').User;
-const HttpError = require('../error').HttpError;
-const ObjectID = require('mongodb').ObjectID;
+const checkAuth = require('../middleware/checkAuth');
 
 module.exports = function(app) {
 
-    app.get('/', function(req, res, next) {
-        res.render("index");
-    });
+    app.get('/', require('./frontpage').get);
 
-    app.get('/users', function(req, res, next) {
-        User.find({}, function(err, users) {
-            if (err) return next(err);
-            res.json(users);
-        })
-    });
+    app.get('/login', require('./login').get);
+    app.post('/login', require('./login').post);
 
-    app.get('/user/:id', function(req, res, next) {
-        let id;
-        try {
-            id = new ObjectID(req.params.id);
-        } catch (e) {
-            next(404);
-            return;
-        }
+    app.post('/logout', require('./logout').post);
 
-        console.log(id);
-
-        User.findById(id, function(err, user) { // ObjectID
-            if (err) return next(err);
-            if (!user) {
-                return next(404);
-            }
-            res.json(user);
-        });
-    });
+    app.get('/chat', checkAuth, require('./chat').get);
 
 };
