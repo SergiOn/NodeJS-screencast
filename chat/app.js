@@ -13,6 +13,7 @@ const config = require('./config');
 const port = config.get('port');
 const log = require('./lib/log')(module);
 const HttpError = require('./error').HttpError;
+const mongoose = require('./lib/mongoose');
 
 const app = express();
 
@@ -36,7 +37,20 @@ if (app.get('env') === 'development') {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-// app.use(session());
+
+const MongoStore = require('connect-mongo')(session);
+
+app.use(session({
+    secret: config.get('session:secret'), // ABCDE242342342314123421.SHA256
+    key: config.get('session:key'),
+    cookie: config.get('session:cookie'),
+    store: new MongoStore({mongooseConnection: mongoose.connection})
+}));
+
+app.use(function(req, res, next) {
+    req.session.numberOfVisits = req.session.numberOfVisits + 1 || 1;
+    res.send("Visits: " + req.session.numberOfVisits);
+});
 
 app.use(require('./middleware/sendHttpError'));
 
