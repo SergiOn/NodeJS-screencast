@@ -19,10 +19,6 @@ const app = express();
 
 app.set('port', port);
 
-http.createServer(app).listen(port, () => {
-    log.info('Express server listening on port', port);
-});
-
 // view engine setup
 app.engine('ejs', engine);
 app.set('views', path.join(__dirname, 'views'));
@@ -72,4 +68,20 @@ app.use(function(err, req, res, next) {
             res.sendHttpError(err);
         }
     }
+});
+
+
+const server = http.createServer(app);
+server.listen(port, () => {
+    log.info('Express server listening on port', port);
+});
+
+const io = require('socket.io').listen(server);
+io.sockets.on('connection', function (socket) {
+
+    socket.on('message', function (text, cb) {
+        socket.broadcast.emit('message', text);
+        cb("123");
+    });
+
 });
