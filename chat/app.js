@@ -34,13 +34,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-const MongoStore = require('connect-mongo')(session);
+const sessionStore = require('./lib/sessionStore');
 
 app.use(session({
     secret: config.get('session:secret'), // ABCDE242342342314123421.SHA256
     key: config.get('session:key'),
     cookie: config.get('session:cookie'),
-    store: new MongoStore({mongooseConnection: mongoose.connection})
+    store: sessionStore,
+    resave: true,
+    saveUninitialized: true
 }));
 
 app.use(require('./middleware/sendHttpError'));
@@ -76,4 +78,5 @@ server.listen(port, () => {
     log.info('Express server listening on port', port);
 });
 
-require('./socket')(server);
+const io = require('./socket')(server);
+app.set('io', io);
