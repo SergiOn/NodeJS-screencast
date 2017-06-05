@@ -76,12 +76,4 @@ server.listen(port, () => {
     log.info('Express server listening on port', port);
 });
 
-const io = require('socket.io').listen(server);
-io.sockets.on('connection', function (socket) {
-
-    socket.on('message', function (text, cb) {
-        socket.broadcast.emit('message', text);
-        cb("123");
-    });
-
-});
+require('./socket')(server);
